@@ -24,12 +24,17 @@ lives on the `pre-test` branch
 | pt-j8a1  | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
 | pt-mse61 | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
 
-### How to?
-1. Update the `hosts` file IP addresses of AWS machines and make them publicly accessible on
+### Instructions
+
+1. Configure ansible to use the hosts file, by adding the below to `~/.ansible.cfg`
+```[defaults]
+inventory = $PWD/hosts
+```
+2. Update the `hosts` file IP addresses of AWS machines and make them publicly accessible on
 port 22, 8080 and 8443
-2. `ansible-playbook homebrew.yml` configure base install for virtual servers
-3. `ansible-playbook mse6.yml` install upstream mse6 servers
-4. `ansible-playbook j8a.yml` install j8a proxy server
-5. `ansible-playbook p0d.yml` install p0d http clients
-6. `ansible-playbook boontaeve.yml --extra-vars runid=n` executes a test run and
+3. `ansible-playbook homebrew.yml` configure base install for virtual servers
+4. `ansible-playbook mse6.yml` install upstream mse6 servers
+5. `ansible-playbook j8a.yml` install j8a proxy server
+6. `ansible-playbook p0d.yml` install p0d http clients
+7. `ansible-playbook boontaeve.yml --extra-vars runid=n` executes a test run and
 fetches data stored under `/results`
