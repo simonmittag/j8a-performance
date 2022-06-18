@@ -27,7 +27,8 @@ lives on the `pre-test` branch
 ### Instructions
 
 1. Configure ansible to use the hosts file, by adding the below to `~/.ansible.cfg`
-```[defaults]
+```bash
+[defaults]
 inventory = $PWD/hosts
 ```
 2. Update the `hosts` file IP addresses of AWS machines and make them publicly accessible on
