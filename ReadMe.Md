@@ -33,8 +33,10 @@ inventory = $PWD/hosts
 ```
 2. Update the `./hosts` file IP addresses of AWS machines.
 ```bash
+...
 [j8a]
 pt-j8a1 ip={{your ip}}
+...
 ```
 Make sure these machines are available on port 8080 and 8443 publicly.
 Ideally they are placed in the same subnet to avoid measuring network lag. Don't
