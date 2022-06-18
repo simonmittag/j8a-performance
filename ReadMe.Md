@@ -1,5 +1,5 @@
 # Why?
-Establish performance baseline for J8a on common AWS hardware.
+Establish performance baseline for [J8a](https://github.com/simonmittag/j8a) on common AWS hardware.
 
 # What?
 Record telemetry data for J8a process, including upstream, downstream
@@ -8,10 +8,10 @@ while under load from multiple downstream clients and proxying to multiple
 upstream resources.
 
 # How?
-This project uses ansible to configure multiple http client machines, one
-proxy machine and multiple upstream machines to run a performance test suite.
-Client connections are created using [![p0d](https://github.com/simonmittag/p0d)]
-and J8a routes to an upstream instance of mse6.
+This project uses ansible to configure virtual servers as http client machines,
+proxy server and multiple upstream machines to run a performance test suite.
+Client connections are created using [p0d](https://github.com/simonmittag/p0d)
+and [J8a](https://github.com/simonmittag/j8a) routes to an upstream instance of [mse6](https://github.com/simonmittag/mse6).
 
 ## Pre-test Phase
 In this phase, the test set-up is validated, including the ansible scripts. It
