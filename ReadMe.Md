@@ -27,3 +27,9 @@ lives on the `pre-test` branch
 ### How to?
 1. Update the `hosts` file IP addresses of AWS machines and make them publicly accessible on
 port 22, 8080 and 8443
+2. `ansible-playbook homebrew.yml` configure base install for virtual servers
+3. `ansible-playbook mse6.yml` install upstream mse6 servers
+4. `ansible-playbook j8a.yml` install j8a proxy server
+5. `ansible-playbook p0d.yml` install p0d http clients
+6. `ansible-playbook boontaeve.yml --extra-vars runid=n` executes a test run and
+fetches data stored under `/results`
