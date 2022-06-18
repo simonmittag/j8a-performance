@@ -31,9 +31,14 @@ lives on the `pre-test` branch
 [defaults]
 inventory = $PWD/hosts
 ```
-2. Update the `hosts` file IP addresses of AWS machines. Make sure these machines
-are available on port 8080 and 8443 publicly. Ideally they are placed in the same
-subnet to avoid measuring network lag.
+2. Update the `./hosts` file IP addresses of AWS machines.
+```bash
+[j8a]
+pt-j8a1 ip={{your ip}}
+```
+Make sure these machines are available on port 8080 and 8443 publicly.
+Ideally they are placed in the same subnet to avoid measuring network lag. Don't
+forget to update your ssh aliases under `~/.ssh/config` if necessary.
 
 3. `ansible-playbook homebrew.yml` configure base install for virtual servers
 4. `ansible-playbook mse6.yml` install upstream mse6 servers
