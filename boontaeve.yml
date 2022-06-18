@@ -1,0 +1,36 @@
+---
+- name: Boonta Eve
+  hosts: p0d
+  vars:
+    localresults: "./results/{{runid}}"
+  tasks:
+     - name: 'Copy p0d config file'
+       template:
+         dest: ~/config.yml
+         src: ./p0d/config.yml
+     - name: "P0d race"
+       command: "p0d -C config.yml -O output.json"
+       ignore_errors: true
+     - name: Create local results directory
+       ansible.builtin.file:
+         path: "{{ localresults }}"
+         state: directory
+       register: local_dir
+       delegate_to: localhost
+     - name: "Fetch results from p0d race"
+       fetch:
+         src: output.json
+         dest: "{{localresults}}"
+     - name: "Delete results remotely to avoid duplication"
+       file:
+         path: output.json
+         state: absent
+- name: Boonta Eve
+  hosts: j8a
+  vars:
+    localresults: "./results/{{runid}}"
+  tasks:
+     - name: "Fetch results from j8a server"
+       fetch:
+         src: output.json
+         dest: "{{localresults}}"

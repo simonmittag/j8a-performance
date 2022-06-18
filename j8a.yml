@@ -1,0 +1,26 @@
+---
+- name: J8a
+  hosts: j8a
+  tasks:
+     - name: "Tap brew repo"
+       command: "brew tap simonmittag/cli"
+     - name: "Install J8a"
+       command: "brew install j8a"
+     - name: "J8a version"
+       command: "j8a -h"
+     - name: 'Copy j8a config file'
+       template:
+         dest: ~/config.yml
+         src: ./j8a/config.yml
+     - name: "shut down old j8a instance"
+       command: "pkill j8a"
+       ignore_errors: yes
+     - name: "clear j8a log file"
+       file:
+         path: output.json
+         state: absent
+       ignore_errors: yes
+     - name: 'Run j8a'
+       shell: "(LOGLEVEL=INFO j8a -c config.yml 2> output.json &)"
+       async: 10
+       poll: 0

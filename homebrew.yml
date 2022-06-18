@@ -1,0 +1,55 @@
+---
+- name: Homebrew installation
+  hosts: all
+  vars:
+    myenv: |
+      export LOGLEVEL=DEBUG
+      PATH=$PATH:/home/ec2-user/.linuxbrew/bin
+  tasks:
+     - name: 'Update ulimit'
+       copy:
+         dest: /etc/security/limits.conf
+         src: "./homebrew/limits.conf"
+       become: yes
+     - name: Reboot machine
+       reboot:
+         reboot_timeout: 120
+       become: yes
+     - name: "Install git"
+       yum:
+         name: git
+         state: present
+         update_cache: true
+       become: true
+     - name: "Install tree"
+       yum:
+         name: tree
+         state: present
+         update_cache: true
+       become: true
+     - name: "Install htop"
+       yum:
+         name: htop
+         state: present
+         update_cache: true
+       become: true
+     - name: Install build tools
+       yum:
+         name: "@Development tools"
+         state: present
+       become: yes
+     - name: "Delete linuxbrew if present"
+       command: "rm -rf ~/.linuxbrew"
+     - name: "Make brew dir"
+       command: "mkdir -p ~/.linuxbrew"
+     - name: "Clone brew"
+       command: "git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew"
+     - name: "Create brew bin dir"
+       command: "mkdir -p ~/.linuxbrew/bin"
+     - name: "link brew command"
+       command: "ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin/brew"
+     - name: 'Add brew path to path'
+       copy:
+         dest: /etc/profile.d/custom-path.sh
+         content: "{{ myenv }}"
+       become: true

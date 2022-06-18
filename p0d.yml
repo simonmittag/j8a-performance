@@ -1,0 +1,14 @@
+---
+- name: P0d
+  hosts: p0d
+  tasks:
+     - name: "Tap brew repo"
+       command: "brew tap simonmittag/cli"
+     - name: "Install p0d"
+       command: "brew install p0d"
+     - name: "P0d version"
+       command: "p0d -v"
+     - name: 'Copy p0d config file'
+       template:
+         dest: ~/config.yml
+         src: ./p0d/config.yml

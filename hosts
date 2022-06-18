@@ -1,0 +1,14 @@
+[pretest]
+pt-p0d1
+pt-j8a1
+pt-mse61
+
+[p0d]
+pt-p0d1
+pt-p0d2
+
+[j8a]
+pt-j8a1 ip=3.24.214.230
+
+[mse6]
+pt-mse61 ip=13.239.62.7

@@ -1,0 +1,14 @@
+---
+- name: Mse6
+  hosts: mse6
+  tasks:
+     - name: "Tap brew repo"
+       command: "brew tap simonmittag/cli"
+     - name: "Install Mse6"
+       command: "brew install mse6"
+     - name: "Mse6 version"
+       command: "mse6 -h"
+     - name: 'Run mse6'
+       shell: "(mse6 -p 8080 >/dev/null 2>&1 &)"
+       async: 10
+       poll: 0
