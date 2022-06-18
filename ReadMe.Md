@@ -42,9 +42,17 @@ Make sure these machines are available on port 8080 and 8443 publicly.
 Ideally they are placed in the same subnet to avoid measuring network lag. Don't
 forget to update your ssh aliases under `~/.ssh/config` if necessary.
 
-3. `ansible-playbook homebrew.yml` configure base install for virtual servers
-4. `ansible-playbook mse6.yml` install upstream mse6 servers
-5. `ansible-playbook j8a.yml` install j8a proxy server
+3. `ansible-playbook homebrew.yml` configures base install for virtual servers.
+This sets up homebrew on linux and increases open file descriptors to avoid default
+ceilings for connections.
+
+4. `ansible-playbook mse6.yml` installs upstream mse6 servers and starts the
+process
+
+5. `ansible-playbook j8a.yml` installs j8a proxy server at default log level and
+starts the process.
+
 6. `ansible-playbook p0d.yml` install p0d http clients
+
 7. `ansible-playbook boontaeve.yml --extra-vars runid=n` executes a test run and
-fetches data stored under `/results`
+fetches data from remote machines, stored locally under `/results`
