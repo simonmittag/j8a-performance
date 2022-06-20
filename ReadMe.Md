@@ -19,7 +19,7 @@ In this phase, the test set-up is validated, including the ansible scripts. It
 lives on the `pre-test` branch
 
 | Machine | Instance Type | CPU Cores | RAM | Network Speed |
-|-|-|-|-|-|-|
+|-|-|-|-|-|
 | pt-p0d1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 | pt-p0d2  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 | pt-j8a1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
