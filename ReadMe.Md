@@ -11,18 +11,19 @@ upstream resources.
 This project uses ansible to configure virtual servers as http client machines,
 proxy server and multiple upstream machines to run a performance test suite.
 Client connections are created using [p0d](https://github.com/simonmittag/p0d)
-and [J8a](https://github.com/simonmittag/j8a) routes to an upstream instance of [mse6](https://github.com/simonmittag/mse6).
+and [J8a](https://github.com/simonmittag/j8a) routes to an upstream HTTP servers
+running [mse6](https://github.com/simonmittag/mse6).
 
 ## Pre-test Phase
 In this phase, the test set-up is validated, including the ansible scripts. It
 lives on the `pre-test` branch
 
-| Machine | Instance Type | Price | CPU Cores | RAM | Network Speed |
-|-|-|-|-|-|-|
-| pt-p0d1  | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
-| pt-p0d2  | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
-| pt-j8a1  | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
-| pt-mse61 | c5n.4xlarge | $1.128 | 16 | 42 GiB | 25 Gigabit |
+| Machine | Instance Type | CPU Cores | RAM | Network Speed |
+|-|-|-|-|-|
+| pt-p0d1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-p0d2  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-j8a1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-mse61 | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 
 ### Instructions
 
@@ -55,4 +56,4 @@ starts the process.
 6. `ansible-playbook p0d.yml` install p0d http clients
 
 7. `ansible-playbook boontaeve.yml --extra-vars runid=n` executes a test run and
-fetches data from remote machines, stored locally under `/results`
+fetches data from remote machines, stored locally under `/results`.
