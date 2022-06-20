@@ -1,4 +1,4 @@
-#!/Users/simonmittag/projects/j8a_perftest/reports/.direnv/python-3.9.13/bin/python3.9
+#!/Users/simonmittag/projects/j8a-performance/reports/.direnv/python-3.9.13/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/simonmittag/projects/j8a_perftest/reports/.direnv/python-3.9.13"
+set -gx VIRTUAL_ENV "/Users/simonmittag/projects/j8a-performance/reports/.direnv/python-3.9.13"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

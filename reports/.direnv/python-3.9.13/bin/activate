@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/simonmittag/projects/j8a_perftest/reports/.direnv/python-3.9.13"
+VIRTUAL_ENV="/Users/simonmittag/projects/j8a-performance/reports/.direnv/python-3.9.13"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
