@@ -4,6 +4,7 @@ pt-p0d2
 pt-p0d3
 pt-p0d4
 pt-j8a1
+pt-nginx1
 pt-mse61
 pt-mse62
 
@@ -16,6 +17,9 @@ pt-p0d4
 [j8a]
 pt-j8a1 ip=13.55.229.221
 
+[nginx]
+pt-nginx1 ip=
+
 [mse6]
-pt-mse61 ip=52.65.102.79
-pt-mse62 ip=3.25.218.95
+pt-mse61 ip=3.25.155.59
+pt-mse62 ip=54.253.104.48

@@ -1,0 +1,17 @@
+---
+- name: Nginx
+  hosts: nginx
+  tasks:
+     - name: "Install Nginx"
+       command: amazon-linux-extras install nginx1
+       become: true
+     - name: 'Copy nginx config file'
+       template:
+         dest: /etc/nginx/nginx.conf
+         src: ./nginx/nginx.conf
+       become: true
+     - name: "Restart Nginx"
+       ansible.builtin.systemd:
+         state: started
+         name: nginx
+       become: true
