@@ -1,6 +1,6 @@
 ---
 - name: Homebrew installation
-  hosts: all
+  hosts: p0d
   vars:
     myenv: |
       export LOGLEVEL=DEBUG

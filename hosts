@@ -1,6 +1,8 @@
 [pretest]
 pt-p0d1
 pt-p0d2
+pt-p0d3
+pt-p0d4
 pt-j8a1
 pt-mse61
 pt-mse62
@@ -8,6 +10,8 @@ pt-mse62
 [p0d]
 pt-p0d1
 pt-p0d2
+pt-p0d3
+pt-p0d4
 
 [j8a]
 pt-j8a1 ip=13.55.229.221

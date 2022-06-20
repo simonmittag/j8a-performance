@@ -22,8 +22,11 @@ lives on the `pre-test` branch
 |-|-|-|-|-|
 | pt-p0d1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 | pt-p0d2  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-p0d3  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-p0d4  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 | pt-j8a1  | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 | pt-mse61 | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
+| pt-mse62 | c5n.2xlarge | 8 | 21 GiB | 25 Gigabit |
 
 ### Instructions
 
