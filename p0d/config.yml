@@ -11,7 +11,7 @@ exec:
   spacingMillis: 250
 req:
   method: POST
-  url: "http://{{ hostvars['pt-j8a1'].ip }}:8080/mse6/post"
+  url: "http://{{ hostvars['pt-nginx1'].ip }}:8080/mse6/post"
   headers:
     - Accept-Encoding: "identity"
     - Content-Type: "application/json"
